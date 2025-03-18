@@ -54,3 +54,8 @@ export default tseslint.config({
 ```
 
 
+## State Management
+we use Zustand for state management
+
+https://zustand.docs.pmnd.rs/getting-started/introduction
+
