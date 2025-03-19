@@ -16,5 +16,7 @@ export type Book =  {
 
 export interface ReadingListHookProps {
   availableBooks: Book[],
-  setAvailableBooks: (books: Book[]) => void
+  setAvailableBooks: (books: Book[]) => void,
+  errorOnFetchingBooks: null | string,
+  setErrorOnFetchingBooks: (error: string) => void
 }
