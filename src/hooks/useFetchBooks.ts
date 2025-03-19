@@ -11,8 +11,7 @@ export const useFetchBooks = () => {
     .then( data => {
       setAvailableBooks(data);
     })
-    .catch( (error: Error) => {
-      console.error(error.name)
+    .catch( () => {
       setErrorOnFetchingBooks(`There was an error trying to fetch this API:${import.meta.env.VITE_API_BOOKS}`)
     })
   }, [setAvailableBooks, setErrorOnFetchingBooks])
