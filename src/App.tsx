@@ -5,7 +5,7 @@ import { useFetchBooks } from './hooks';
 
 function App() {
   const availableBooks = useReadingList(state => state.availableBooks);
-  const setAvailableBooks = useReadingList( state => state.setAvailableBooks);
+  const errorOnFetchingBooks = useReadingList( state => state.errorOnFetchingBooks);
   useFetchBooks();
 
   return (
@@ -17,7 +17,12 @@ function App() {
 
         </div>
       ))}
-      <button onClick={ () => setAvailableBooks([])}>load</button>
+      {errorOnFetchingBooks && (
+        <div>
+          <strong>Error!</strong>
+          <p>{errorOnFetchingBooks}</p>
+        </div>
+      )}
     </>
   );
 }

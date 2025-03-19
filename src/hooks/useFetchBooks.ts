@@ -3,15 +3,17 @@ import { useReadingList } from "../store";
 
 export const useFetchBooks = () => {
   const setAvailableBooks = useReadingList( state => state.setAvailableBooks);
+  const setErrorOnFetchingBooks = useReadingList( state => state.setErrorOnFetchingBooks);
 
   useEffect( () => {
-    fetch('https://ruiz94.github.io/json-data/books.json')
+    fetch(import.meta.env.VITE_API_BOOKS || '')
     .then(response => response.json())
     .then( data => {
       setAvailableBooks(data);
     })
     .catch( (error: Error) => {
-      console.error(error.message)
+      console.error(error.name)
+      setErrorOnFetchingBooks(`There was an error trying to fetch this API:${import.meta.env.VITE_API_BOOKS}`)
     })
-  }, [setAvailableBooks])
+  }, [setAvailableBooks, setErrorOnFetchingBooks])
 }
