@@ -59,3 +59,15 @@ we use Zustand for state management
 
 https://zustand.docs.pmnd.rs/getting-started/introduction
 
+## Standard library
+https://www.npmjs.com/package/standard
+
+This module saves you (and others!) time in three ways:
+
+- No configuration. The easiest way to enforce code quality in your project. No decisions to make. No .eslintrc files to manage. It just works.
+- Automatically format code. Just run yarn eslint or yarn eslint:fix and say goodbye to messy or inconsistent code.
+- Catch style issues & programmer errors early. Save precious code review time by eliminating back-and-forth between reviewer & contributor.
+
+```bash
+yarn eslint or yarn eslint:fix
+```
