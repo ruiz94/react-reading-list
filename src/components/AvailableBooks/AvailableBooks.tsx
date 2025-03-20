@@ -1,5 +1,6 @@
 import { useReadingList } from '@/store';
-import { Book } from '@/types/readingList';
+import type { Book as BookType } from '@/types/readingList';
+import { Book } from '../Book';
 
 export const AvailableBooks = () => {
   const availableBooks = useReadingList(state => state.availableBooks);
@@ -9,10 +10,8 @@ export const AvailableBooks = () => {
 
   return (
     <div>
-      {availableBooks.map((book: Book) => (
-        <div key={book.ISBN}>
-          <span>Title: {book.title}</span>
-        </div>
+      {availableBooks.map((book: BookType) => (
+        <Book key={book.ISBN} {...book} />
       ))}
       {errorOnFetchingBooks && (
         <div>
