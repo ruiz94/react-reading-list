@@ -1,19 +1,16 @@
-import './App.css';
+import './App.css'
 import { useFetchBooks } from '@/hooks'
 import { AvailableBooks } from '@/components'
 
-function App() {
-  
-  useFetchBooks();
+function App () {
+  useFetchBooks()
 
   return (
     <>
       <h1>Available Books</h1>
-      <AvailableBooks/>
-      
-      
+      <AvailableBooks />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
