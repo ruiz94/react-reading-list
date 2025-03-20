@@ -4,6 +4,7 @@ import { Book } from '@/types/readingList';
 
 export const AvailableBooks = () => {
   const availableBooks = useReadingList(state => state.availableBooks);
+  const errorOnFetchingBooks = useReadingList( state => state.errorOnFetchingBooks);
 
   return <div>
     {availableBooks.map((book: Book) => (
@@ -12,5 +13,11 @@ export const AvailableBooks = () => {
 
         </div>
       ))}
+    {errorOnFetchingBooks && (
+      <div>
+        <strong>Error!</strong>
+        <p>{errorOnFetchingBooks}</p>
+      </div>
+    )}
   </div>
 }
