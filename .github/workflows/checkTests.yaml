@@ -1,4 +1,4 @@
-name: Test and Test coverage
+name: Test runner
 run-name: ${{ github.actor }} is running Tests and Test Coverage 🚀
 on: [push]
 jobs:
