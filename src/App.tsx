@@ -1,16 +1,17 @@
-import './App.css'
-import { useFetchBooks } from '@/hooks'
-import { AvailableBooks } from '@/components'
+import './App.css';
+import { useFetchBooks } from '@/hooks';
+import { AvailableBooks } from '@/components';
+import { ReadingList } from './components/ReadingList/ReadingList';
 
-function App () {
-  useFetchBooks()
+function App() {
+  useFetchBooks();
 
   return (
-    <>
-      <h1>Available Books</h1>
+    <section className='flex'>
       <AvailableBooks />
-    </>
-  )
+      <ReadingList />
+    </section>
+  );
 }
 
-export default App
+export default App;
