@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from "path";
@@ -10,5 +12,5 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"), // Asegúrate de que apunta a "src"
     },
-  },
+  }
 })
