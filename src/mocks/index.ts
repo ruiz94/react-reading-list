@@ -14,5 +14,20 @@ export const MOCK_BOOKS = [
         'El Silmarillion'
       ]
     }
-  }
+  },
+  {
+    "title": "1984",
+    "pages": 328,
+    "genre": "Ciencia ficción",
+    "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg",
+    "synopsis": "Una inquietante visión de un futuro distópico y totalitario.",
+    "year": 1949,
+    "ISBN": "978-0451524935",
+    "author": {
+        "name": "George Orwell",
+        "otherBooks": [
+            "Rebelión en la granja"
+        ]
+    }
+  },
 ]
