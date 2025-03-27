@@ -28,5 +28,5 @@ export interface ReadingListHookProps {
   removeBookFromReadingList: (ISBN: Book["ISBN"]) => void,
   updateFilters: (filterName: FilterNames, filterValue: string) => void,
   errorOnFetchingBooks: null | string,
-  setErrorOnFetchingBooks: (error: string) => void
+  setErrorOnFetchingBooks: (error: string | null) => void
 }
