@@ -34,6 +34,7 @@ export const AvailableBooks = () => {
         {filteredBooks.map((book: BookType) => (
           <BookContainer key={book.ISBN} book={book} />
         ))}
+        {!countAvailableBooks && <p>There is no available books</p>}
         {errorOnFetchingBooks && (
           <div>
             <strong>Error!</strong>

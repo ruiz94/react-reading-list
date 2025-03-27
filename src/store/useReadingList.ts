@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { getGenres } from "@/utilities";
 import type { Book, FilterNames, ReadingListHookProps } from "../types/readingList";
 
 export const useReadingList = create<ReadingListHookProps>((set) => ({
@@ -44,8 +45,5 @@ export const useReadingList = create<ReadingListHookProps>((set) => ({
     return { filters: { ...state.filters, [filterName]: value}}
   }),
   errorOnFetchingBooks: null,
-  setErrorOnFetchingBooks: (error) => set( () => ({ errorOnFetchingBooks: error}))
+  setErrorOnFetchingBooks: (error: string | null) => set( () => ({ errorOnFetchingBooks: error}))
 }))
-
-
-const getGenres = (books: Book[]): string[] => books.reduce( (list: string[], book) => list.includes(book.genre) ? list : [...list, book.genre], [])
