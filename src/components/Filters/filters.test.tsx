@@ -9,10 +9,13 @@ import { useReadingList } from '@/store';
 import { Filters } from './index';
 import { describe, expect, it } from 'vitest';
 import { MOCK_BOOKS } from '@/mocks';
+import { getGenres } from '@/utilities';
 
 describe('Filter component', () => {
-  const state = useReadingList.getState();
-  state.setAvailableBooks(MOCK_BOOKS);
+  useReadingList.setState(state => ({
+    ...state,
+    genres: getGenres(MOCK_BOOKS),
+  }));
 
   it('should have Filter as a name of the section', () => {
     render(<Filters />);

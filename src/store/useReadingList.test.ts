@@ -2,7 +2,6 @@ import { describe, expect, it, beforeEach } from "vitest";
 import { useReadingList } from "./useReadingList";
 import { renderHook, waitFor, act } from "@testing-library/react";
 import { MOCK_BOOKS } from "@/mocks";
-import { getGenres } from "@/utilities";
 
 const initialState = useReadingList.getState()
 describe('useReadingList Store', () => {
@@ -42,9 +41,7 @@ describe('useReadingList Store', () => {
     })
     
     await waitFor( () => {
-      const genres = getGenres(MOCK_BOOKS);
       expect(result.current.availableBooks).toStrictEqual(MOCK_BOOKS)
-      expect(result.current.genres).toStrictEqual(genres)
     })
   })
 

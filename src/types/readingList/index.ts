@@ -14,15 +14,17 @@ export type Book =  {
   "author": author
 }
 
+export type Filters = {
+  genre: string | null,
+    pages: number | null
+}
+
 export type FilterNames = 'genre'
 export interface ReadingListHookProps {
   availableBooks: Book[],
   readingList: Book[],
   genres: string[],
-  filters: {
-    genre: string | null,
-    pages: number | null
-  }
+  filters: Filters,
   setAvailableBooks: (books: Book[]) => void,
   addBookToReadingList: (ISBN: Book["ISBN"]) => void,
   removeBookFromReadingList: (ISBN: Book["ISBN"]) => void,
