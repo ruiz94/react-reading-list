@@ -3,6 +3,7 @@ import { useReadingList } from '@/store';
 export const Filters = () => {
   const genres = useReadingList(state => state.genres);
   const updateFilters = useReadingList(state => state.updateFilters);
+  const filters = useReadingList(state => state.filters);
 
   const handleSelect = (value: string) => updateFilters('genre', value);
 
@@ -19,10 +20,9 @@ export const Filters = () => {
           id='genre-select'
           className='text-white'
           onChange={e => handleSelect(e.target.value)}
+          value={filters.genre || ''}
         >
-          <option value='' selected>
-            --Choose an option--
-          </option>
+          <option value=''>--Choose an option--</option>
           {genres.map(genre => (
             <option key={genre} value={genre}>
               {genre}

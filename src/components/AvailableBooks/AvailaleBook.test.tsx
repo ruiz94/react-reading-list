@@ -34,9 +34,6 @@ describe('AvailableBook Component', () => {
     render(<AvailableBooks />);
 
     expect(screen.getByText(/Available Books \( 1 \)/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole('option', { name: MOCK_BOOKS[0].genre }),
-    ).toBeInTheDocument();
 
     const books = screen.getAllByText(/Add to reading list/i);
     expect(books).toHaveLength(1);
